@@ -1,28 +1,28 @@
 package generalstore.hooks;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
+import generalstore.utils.ConfigReader;
+import generalstore.utils.Driver;
+import io.cucumber.java.*;
+
 
 public class Hooks {
     @BeforeAll
     public void beforeAll() {
-
+        Driver.serverBaslat(ConfigReader.getProperty("localIPAdres"), Integer.parseInt(ConfigReader.getProperty("localPort")));
     }
 
-    @Before
-    public void setUp() {
-
-    }
+//    @Before
+//    public void setUp() {
+//    }
 
     @After
     public void tearDown() {
+        Driver.uygulamayiKapat();
 
     }
 
     @AfterAll
     public void afterAll() {
-
+        Driver.serverKapat();
     }
 }

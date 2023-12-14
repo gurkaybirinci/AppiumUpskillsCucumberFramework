@@ -12,18 +12,18 @@ public class FormSayfasi {
     }
 
     @AndroidFindBy(id = "com.androidsample.generalstore:id/spinnerCountry")
-    private WebElement ulkeMenusu;
+    public WebElement ulkeMenusu;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/nameField")
-    private WebElement isimAlani;
+    public WebElement isimAlani;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/radioFemale")
-    private WebElement cinsiyetFemale;
+    public WebElement cinsiyetFemale;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/radioMale")
-    private WebElement cinsiyetMale;
+    public WebElement cinsiyetMale;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
-    private WebElement letsShopButonu;
+    public WebElement letsShopButonu;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/toolbar_title")
-    private WebElement sayfaBasligi;
+    public WebElement sayfaBasligi;
     @AndroidFindBy(xpath = "//android.widget.Toast")
-    private WebElement hataMesaji;
+    public WebElement hataMesaji;
 
 }
