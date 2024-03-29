@@ -24,6 +24,7 @@ public class Driver {
                     + File.separator + getProperty("apkName");
 
             UiAutomator2Options options = new UiAutomator2Options()
+                    .setUiautomator2ServerInstallTimeout(Duration.ofSeconds(40))
                     .setApp(appUrl);
 
             driver = new AndroidDriver(service.getUrl(), options);

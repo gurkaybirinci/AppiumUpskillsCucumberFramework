@@ -1,6 +1,7 @@
 package generalstore.stepdefs;
 
 import generalstore.pages.FormSayfasi;
+import generalstore.utils.ReusableMethods;
 import io.appium.java_client.AppiumBy;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
@@ -33,6 +34,7 @@ public class FormSayfasiStepDefs {
     }
     @Then("Sayfa basliginin {string} oldugu dogrulanir")
     public void sayfa_basliginin_oldugu_dogrulanir(String baslik) {
+        ReusableMethods.bekle(1);
         Assert.assertEquals(formSayfasi.sayfaBasligi.getText(), baslik);
     }
 

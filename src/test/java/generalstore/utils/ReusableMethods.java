@@ -7,11 +7,12 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class ReusableMethods {
 
-    public void bekle(int second){
+    public static void bekle(int second){
         try {
             Thread.sleep(second*1000);
         } catch (InterruptedException e) {
@@ -116,6 +117,24 @@ public class ReusableMethods {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sayi));
         wait.until(ExpectedConditions.visibilityOf(element));
 
+    }
+
+    public static void raporuAc(){
+        // Rapor dosyasının tam yolu
+        String raporYolu = System.getProperty("user.dir") + "\\raporlar\\CucumberRapor.html";
+
+        try {
+            // Google Chrome'un çalıştırılması
+            String chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+            String command = chromePath + " " + raporYolu;
+            Process process = Runtime.getRuntime().exec(command);
+
+            // İşlemi bekleyin
+            process.waitFor();
+
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
